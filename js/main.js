@@ -18,7 +18,8 @@
     menuToggle.setAttribute('aria-expanded', String(isOpen));
     menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
   });
-  $$('a', mainNav).forEach(a => a.addEventListener('click', closeMenu));
+  $('a', mainNav).forEach(a => a.addEventListener('click', closeMenu));
+  $('.site-header .brand')?.addEventListener('click', closeMenu);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
   document.addEventListener('click', e => {
     if (mainNav?.classList.contains('is-open') && !e.target.closest('.site-header')) closeMenu();
